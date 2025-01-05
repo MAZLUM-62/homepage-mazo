@@ -4,14 +4,14 @@ const ContactForm = () => {
   return (
     <section id="Kontakt" className="py-20 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Kontakt Anfrage</h2>
           <p className="mt-4 text-lg text-text-secondary">
           Lassen Sie uns besprechen, wie wir Ihnen bei der Umgestaltung Ihres Unternehmens helfen können
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 p-8 lg:grid-cols-2 gap-12">
           <div>
             <form className="space-y-6">
               <div>
@@ -21,7 +21,7 @@ const ContactForm = () => {
                 <input
                   type="text"
                   id="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 />
               </div>
               
@@ -32,7 +32,7 @@ const ContactForm = () => {
                 <input
                   type="email"
                   id="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 />
               </div>
               
@@ -43,13 +43,13 @@ const ContactForm = () => {
                 <textarea
                   id="message"
                   rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 />
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors"
+                className="w-full bg-indigo-600 text-primary px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors"
               >
                 Nachricht Senden
               </button>
@@ -60,7 +60,7 @@ const ContactForm = () => {
             <div className="flex items-start space-x-4">
               <Mail className="h-6 w-6 text-indigo-600 mt-1" />
               <div>
-                <h3 className="text-lg font-medium text-text-secondary">Email Us</h3>
+                <h3 className="text-lg font-medium text-text-secondary">E-Mail</h3>
                 <p className="mt-1 text-gray-600">info@mazocode.de</p>
               </div>
             </div>

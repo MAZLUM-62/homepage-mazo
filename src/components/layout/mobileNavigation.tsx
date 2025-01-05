@@ -27,9 +27,7 @@ const Navigation = () => {
             <a href="#leistungen" className="text-gray-700 hover:text-gray-900 transition-colors">Leistungen</a>
             <a href="#portfolio" className="text-gray-700 hover:text-gray-900 transition-colors">Portfolio</a>
             <a href="#ueber-uns" className="text-gray-700 hover:text-gray-900 transition-colors">Über uns</a>
-            <a href="#kontakt" className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">
-              Kontakt
-            </a>
+            <a href="#kontakt" className="text-gray-700 hover:text-gray-900 transition-colors">Kontakt</a>
           </div>
 
           <div className="md:hidden">

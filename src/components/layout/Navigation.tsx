@@ -3,18 +3,21 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const routes = [
-  { path: '/', label: 'Home' },
   { path: '/leistungen', label: 'Leistungen' },
   { path: '/portfolio', label: 'Portfolio' },
   { path: '/ueber-uns', label: 'Über uns' },
+  { path: '/kontakt', label: 'Kontakt' },
 ];
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Show only the first 3 routes for Desktop
+  const desktopRoutes = routes.slice(0, 3);
+
   return (
-    <nav className="fixed w-full z-50 bg-bg-primary/95 backdrop-blur-sm border-b border-border-subtle">
+    <nav className="fixed w-full z-50 bg-bg-primary/85 backdrop-blur-sm border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
@@ -25,7 +28,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {routes.map((route) => (
+            {desktopRoutes.map((route) => (
               <Link
                 key={route.path}
                 to={route.path}
@@ -36,7 +39,7 @@ const Navigation = () => {
                 {route.label}
               </Link>
             ))}
-            <Link to="/Kontakt" className="btn btn-primary">
+            <Link to="/kontakt" className="btn btn-primary">
               Anfrage
             </Link>
           </div>
