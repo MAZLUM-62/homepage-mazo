@@ -1,13 +1,12 @@
-import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-const Contact = () => {
+const ContactForm = () => {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="Kontakt" className="py-20 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Kontakt Anfrage</h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Kontakt Anfrage</h2>
+          <p className="mt-4 text-lg text-text-secondary">
           Lassen Sie uns besprechen, wie wir Ihnen bei der Umgestaltung Ihres Unternehmens helfen können
           </p>
         </div>
@@ -16,7 +15,7 @@ const Contact = () => {
           <div>
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="name" className="block text-sm font-medium text-text-secondary">
                   Name
                 </label>
                 <input
@@ -27,7 +26,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-text-secondary">
                   Email
                 </label>
                 <input
@@ -38,7 +37,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="message" className="block text-sm font-medium text-text-secondary">
                   Nachricht
                 </label>
                 <textarea
@@ -61,7 +60,7 @@ const Contact = () => {
             <div className="flex items-start space-x-4">
               <Mail className="h-6 w-6 text-indigo-600 mt-1" />
               <div>
-                <h3 className="text-lg font-medium text-gray-900">Email Us</h3>
+                <h3 className="text-lg font-medium text-text-secondary">Email Us</h3>
                 <p className="mt-1 text-gray-600">info@mazocode.de</p>
               </div>
             </div>
@@ -69,7 +68,7 @@ const Contact = () => {
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-indigo-600 mt-1" />
               <div>
-                <h3 className="text-lg font-medium text-gray-900">Anrufen</h3>
+                <h3 className="text-lg font-medium text-text-secondary">Anrufen</h3>
                 <p className="mt-1 text-gray-600">+49 0176 80808080</p>
               </div>
             </div>
@@ -77,7 +76,7 @@ const Contact = () => {
             <div className="flex items-start space-x-4">
               <MapPin className="h-6 w-6 text-indigo-600 mt-1" />
               <div>
-                <h3 className="text-lg font-medium text-gray-900">Anschrift</h3>
+                <h3 className="text-lg font-medium text-text-secondary">Anschrift</h3>
                 <p className="mt-1 text-gray-600">
                   123 Tech Street<br />
                   Innovation District<br />
@@ -92,4 +91,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;

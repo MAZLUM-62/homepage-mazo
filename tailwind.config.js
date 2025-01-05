@@ -48,7 +48,16 @@ export default {
         fast: '100ms',
         normal: '200ms',
         slow: '300ms',
-      }
+      },
+      animation: {
+        marquee: 'marquee 30s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
     },
   },
   plugins: [],

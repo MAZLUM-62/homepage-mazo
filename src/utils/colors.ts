@@ -1,5 +1,4 @@
 // Color utility functions and constants
-import { theme } from '../theme';
 
 // Convert hex to RGB for opacity support
 export const hexToRGB = (hex: string): string => {

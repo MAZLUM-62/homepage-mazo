@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const routes = [
   { path: '/', label: 'Home' },
-  { path: '/services', label: 'Services' },
+  { path: '/leistungen', label: 'Leistungen' },
   { path: '/portfolio', label: 'Portfolio' },
-  { path: '/about', label: 'About' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/ueber-uns', label: 'Über uns' },
 ];
 
 const Navigation = () => {
@@ -37,8 +36,8 @@ const Navigation = () => {
                 {route.label}
               </Link>
             ))}
-            <Link to="/contact" className="btn btn-primary">
-              Get Started
+            <Link to="/Kontakt" className="btn btn-primary">
+              Anfrage
             </Link>
           </div>
 

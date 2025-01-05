@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import FooterColumn from './FooterColumn';
 import FooterLink from './FooterLink';
@@ -26,22 +25,22 @@ const Footer = () => {
 
           {/* Quick Links */}
           <FooterColumn title="Quick Links">
-            <FooterLink to="/services">Leistungen</FooterLink>
+            <FooterLink to="/leistungen">Leistungen</FooterLink>
             <FooterLink to="/portfolio">Portfolio</FooterLink>
-            <FooterLink to="/about">Über uns</FooterLink>
-            <FooterLink to="/contact">Kontakt</FooterLink>
+            <FooterLink to="/ueber-uns">Über uns</FooterLink>
+            <FooterLink to="/kontakt">Kontakt</FooterLink>
           </FooterColumn>
 
           {/* Services */}
-          <FooterColumn title="Services">
-            <FooterLink to="/services/web">Web Development</FooterLink>
-            <FooterLink to="/services/mobile">Mobile Apps</FooterLink>
-            <FooterLink to="/services/cloud">Cloud Solutions</FooterLink>
-            <FooterLink to="/services/consulting">IT Consulting</FooterLink>
+          <FooterColumn title="Leistungen">
+            <FooterLink to="/leistungen/web">Web Development</FooterLink>
+            <FooterLink to="/leistungen/mobile">Mobile Apps</FooterLink>
+            <FooterLink to="/leistungen/cloud">Cloud Solutions</FooterLink>
+            <FooterLink to="/leistungen/consulting">IT Consulting</FooterLink>
           </FooterColumn>
 
           {/* Contact Info */}
-          <FooterColumn title="Contact Us">
+          <FooterColumn title="Kontakt">
             <div className="space-y-4">
               <a href="mailto:contact@mazocode.com" className="flex items-center space-x-2 text-[#E5E5E5] hover:text-[#00B4D8] transition-colors duration-200">
                 <Mail size={20} className="text-[#00B4D8]" />

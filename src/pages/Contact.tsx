@@ -1,11 +1,10 @@
-import React from 'react';
-import PageContainer from '../components/layout/PageContainer';
-import PageKontakt from '../components/Contact.tsx'
+import PageContainer from '../components/layout/PageContainer.tsx';
+import ContactForm from '../components/kontakt/ContactForm.tsx'
 
 const Contact = () => {
   return (
     <PageContainer>
-     <PageKontakt/>
+      <ContactForm/>
     </PageContainer>
   );
 };

@@ -1,6 +1,5 @@
-import React from 'react';
 import PageContainer from '../components/layout/PageContainer';
-import FeaturedServices from '../components/home/FeaturedServices';
+import FeaturedServices from '../components/services/OverviewServices';
 
 const Services = () => {
   return (
