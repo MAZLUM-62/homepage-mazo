@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shadow-color: 220 3% 15%;
+    --shadow-strength: 1%;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md
+           font-medium transition-all duration-normal relative
+           before:absolute before:inset-0 before:rounded-md before:transition-colors
+           before:z-0 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-interactive-default text-text-primary 
+           hover:bg-interactive-hover active:bg-interactive-active
+           focus-visible:ring-2 focus-visible:ring-interactive-focus focus-visible:ring-offset-2 
+           focus-visible:ring-offset-bg-primary focus-visible:outline-none
+           shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-tertiary text-text-primary hover:bg-bg-hover
+           border border-border-default hover:border-border-hover
+           focus-visible:ring-2 focus-visible:ring-interactive-focus focus-visible:ring-offset-2 
+           focus-visible:ring-offset-bg-primary focus-visible:outline-none
+           shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .nav-link {
+    @apply text-text-secondary hover:text-text-primary relative
+           after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+           after:bg-interactive-default after:scale-x-0 after:origin-left
+           after:transition-transform hover:after:scale-x-100;
+  }
+
+  .nav-link-active {
+    @apply text-brand-primary after:scale-x-100;
+  }
+
+  .card {
+    @apply bg-bg-secondary rounded-lg p-6 
+           border border-border-subtle
+           hover:border-border-default transition-all
+           shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .input {
+    @apply bg-bg-secondary border border-border-default rounded-md px-3 py-2
+           text-text-primary placeholder-text-tertiary
+           focus:border-interactive-default focus-visible:ring-1 focus-visible:ring-interactive-focus
+           focus-visible:outline-none transition-colors shadow-sm;
+  }
+}
