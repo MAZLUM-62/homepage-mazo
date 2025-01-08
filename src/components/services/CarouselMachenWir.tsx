@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable'; // Für die Touch-Swipe-Funktionalität
+import { useSwipeable } from 'react-swipeable'; // Für Touch-Gesten
 
 import image1 from '../images/01.png';
 import image2 from '../images/02.png';
@@ -35,27 +35,10 @@ const carouselItems = [
 
 const CarouselMachenWir = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAutoSliding, setIsAutoSliding] = useState(true); // Kontrolliert die automatische Bewegung
-    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); // Ref für den Timer
-
-    // Funktion zum Wechseln des Bildes
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    };
-
-    // Auto-Slide Funktion
-    const startAutoSliding = () => {
-        intervalRef.current = setInterval(nextImage, 4000); // Timer
-    };
-
-    // Stoppe die automatische Bewegung
-    const stopAutoSliding = () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        }
-        setIsAutoSliding(false); // Deaktiviert die automatische Bewegung
-    };
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [deltaX, setDeltaX] = useState(0); // Unterschied zwischen Start- und aktueller Position
+    const trackRef = useRef<HTMLDivElement>(null);
 
     // Swipeable Hook für die Touch-Funktionalität
     const handlers = useSwipeable({
@@ -66,26 +49,46 @@ const CarouselMachenWir = () => {
             if (eventData.dir === 'Right') {
                 setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselItems.length) % carouselItems.length);
             }
-            stopAutoSliding(); // Stoppt die automatische Bewegung bei Swipe
         },
+        preventScrollOnSwipe: true,
+        trackMouse: false, // Hier wird die Maus nicht getrackt, da wir eigene Mauslogik verwenden
     });
 
-    // Effekt für das automatische Swipen
-    useEffect(() => {
-        if (isAutoSliding) {
-            startAutoSliding();
-        }
-        return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current);
-            }
-        };
-    }, [isAutoSliding]);
+    // Mausinteraktionen
+    const handleMouseDown = (e: React.MouseEvent) => {
+        setIsDragging(true);
+        setStartX(e.clientX); // Startposition speichern
+    };
 
-    // Funktion für das Klicken eines kleinen Buttons
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging) return; // Nur reagieren, wenn Maus gedrückt ist
+        setDeltaX(e.clientX - startX); // Bewegung berechnen
+    };
+
+    const handleMouseUp = () => {
+        if (isDragging) {
+            // Nur bei Dragging auswerten
+            if (deltaX > 0.1) {
+                // Wenn genug nach rechts gezogen wurde
+                setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselItems.length) % carouselItems.length);
+            } else if (deltaX < -0.1) {
+                // Wenn genug nach links gezogen wurde
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+            }
+        }
+        // Reset der Werte
+        setIsDragging(false);
+        setDeltaX(0);
+    };
+
+    const handleMouseLeave = () => {
+        // Falls die Maus das Element verlässt, zurücksetzen
+        setIsDragging(false);
+        setDeltaX(0);
+    };
+
     const goToImage = (index: number) => {
         setCurrentIndex(index);
-        stopAutoSliding(); // Stoppt die automatische Bewegung, wenn der Benutzer klickt
     };
 
     return (
@@ -102,10 +105,15 @@ const CarouselMachenWir = () => {
                 {/* Slider */}
                 <div
                     className="relative flex items-center overflow-hidden intersect-once intersect:motion-preset-slide-up"
-                    {...handlers} // Swipeable Handler
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}
+                    {...handlers} // Swipeable Handler für Touch-Events
                 >
                     {/* Slider-Track */}
                     <div
+                        ref={trackRef}
                         className="flex transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${currentIndex * 100}%)`,
@@ -117,11 +125,11 @@ const CarouselMachenWir = () => {
                                 className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
                             >
                                 {/* Links: Bild */}
-                                <div className="relative w-full h-[350px] overflow-hidden">
+                                <div className="relative w-full h-[350px] overflow-hidden select-none">
                                     <img
                                         src={item.image}
                                         alt={`Slide ${index + 1}`}
-                                        className="w-full h-full object-cover mx-auto"
+                                        className="w-full h-full object-cover mx-auto pointer-events-none"
                                     />
                                 </div>
                                 {/* Rechts: Textbereich */}
