@@ -1,10 +1,12 @@
 import PageContainer from '../components/layout/PageContainer';
-import FeaturedServices from '../components/services/OverviewServices';
+import CardOverviewAnimation from '../components/services/CardOverviewAnimation';
+import CarouselMachenWir from '../components/services/CarouselMachenWir';
 
 const Services = () => {
   return (
     <PageContainer>
-      <FeaturedServices/>
+      <CardOverviewAnimation/>
+      <CarouselMachenWir/>
     </PageContainer>
   );
 };

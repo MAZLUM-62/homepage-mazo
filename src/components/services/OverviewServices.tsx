@@ -5,51 +5,60 @@ const services = [
   {
     icon: <Smartphone className="h-8 w-8 text-brand-primary" />,
     title: 'Mobile Apps',
-    description: 'Wir entwickeln moderne und responsiv mobile Apps mit nur einer Codebasis für Webanwendungen, iOS, Android, MacOS und Windows.',
+    description: 'Wir entwickeln maßgeschneiderte, plattformübergreifende mobile Apps für iOS, Android, Web, macOS und Windows – alles mit einer einzigen Codebasis.',
     link: '/leistungen/mobile',
   },
   {
     icon: <Globe className="h-8 w-8 text-brand-primary" />,
     title: 'Web Development',
-    description: 'Wir entwickeln moderne und responsiv webseiten und Online Shops.',
+    description: 'Moderne und performante Webseiten, die überzeugen. Wir setzen auf zukunftssichere Technologien und Frameworks für optimale Ergebnisse.',
     link: '/leistungen/web',
+  },
+  {
+    icon: <Globe className="h-8 w-8 text-brand-primary" />,
+    title: 'Online Shops',
+    description: 'Professionelle E-Commerce-Lösungen für Ihren Erfolg. Wir nutzen Plattformen wie Shopify, WooCommerce und Magento für leistungsstarke Online Shops.',
+    link: '/leistungen/web-shop',
   },
   {
     icon: <Server className="h-8 w-8 text-brand-primary" />,
     title: 'IT Solutions',
-    description: 'Wir bieten professionelle Beratung und Support für Hardware und Software.',
+    description: 'Individuelle IT-Beratung und zuverlässiger Support – von Hardware über Software bis hin zur Infrastruktur.',
     link: '/leistungen/it-solutions',
   },
   {
     icon: <Server className="h-8 w-8 text-brand-primary" />,
     title: 'Cloud Solutions',
-    description: 'Wir bieten moderne Cloud Lösungen für Ihr Unternehmen.',
+    description: 'Smarte Cloud-Lösungen, die Ihr Unternehmen flexibel, effizient und sicher machen.',
     link: '/leistungen/cloud-solutions',
   },
 ];
 
+
+
+
 const FeaturedServices = () => {
   return (
-    <section className="py-20 bg-bg-primary">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Unsere Leistungen</h2>
+        <div className="text-center mb-16 motion-preset-expand ">
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">Unsere digitalen Lösungen für Ihren Erfolg</h2>
           <p className="mt-4 text-lg text-brand-primary">
-            Comprehensive digital solutions tailored to your needs
+          Alles, was Sie für Ihre digitale Transformation brauchen – an einem Ort.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 motion-preset-pop">
           {services.map((service) => (
             <Link
               key={service.title}
               to={service.link}
-              className="card group hover:border-brand-primary"
+              className="card group hover:border-brand-primary intersect:motion-preset-fade "
             >
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-brand-primary">
                 {service.title}
               </h3>
-              <p className="text-text-secondary">{service.description}</p>
+              <p className="text-text-secondary ">{service.description}</p>
             </Link>
           ))}
         </div>

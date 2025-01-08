@@ -21,7 +21,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-text-primary">
+            <span className="text-2xl font-bold text-text-primary  motion-preset-blur-right ">
               MazoCode
             </span>
           </Link>
@@ -39,7 +39,7 @@ const Navigation = () => {
                 {route.label}
               </Link>
             ))}
-            <Link to="/kontakt" className="btn btn-primary">
+            <Link to="/kontakt" className="btn btn-primary ">
               Anfrage
             </Link>
           </div>

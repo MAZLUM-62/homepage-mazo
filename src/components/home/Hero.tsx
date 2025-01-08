@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { ArrowRight, Rocket, Sparkles } from 'lucide-react';
+import HeroBackgroundImage from './HeroBackgroundImage';
 
 const Hero = () => {
  
@@ -9,23 +10,19 @@ const Hero = () => {
   return (
     <div className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 opacity-70"
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(188, 24, 24, 0.09) 0%, rgba(0, 163, 255, 0.5) 100%)`,
-          }} />
+          <HeroBackgroundImage />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md ">
         <div className="text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start space-x-2 mb-6">
             <Sparkles className="w-6 h-6 text-brand-primary" />
-            <span className="text font-medium">Innovativ. Kreativ. Digital.</span>
+            <span className="text font-medium motion-preset-typewriter-[28] motion-duration-[5s]"> Innovativ. Kreativ. Digital.</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ">
             Ihre Vision,{' '}
-            <span className="bg-gradient-to-r from-[#4B91D9] to-[#0b9881] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#4B91D9] to-[#0b9881] bg-clip-text text-transparent motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur">
               Unsere Innovation
             </span>
           </h1>
@@ -42,19 +39,20 @@ const Hero = () => {
               className="btn btn-primary group"
             >
               Projekt Anfrage
-              <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform motion-preset-pulse motion-duration-2000" />
             </Link>
             <Link
               to="/portfolio"
-              className="btn btn-secondary group"
+              className="btn btn-secondary"
             >
               Portfolio entdecken
+              
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           {/* Tech stack indicators */}
-          <div className="mt-12 flex items-center justify-center lg:justify-start space-x-6 text-text-tertiary">
+          <div className="mt-12 flex items-center justify-center lg:justify-start space-x-6 text-text-tertiary motion-preset-shrink ">
             <span>Bingen am Rhein</span>
             <span>•</span>
             <span>Apps, Web - IT Solutions</span>

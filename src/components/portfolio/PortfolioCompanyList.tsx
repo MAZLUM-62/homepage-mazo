@@ -20,7 +20,7 @@ const companies = [
 const PortfolioCompanyList = () => {
     return (
         <div className="bg-bg-primary py-8">
-            <div className="max-w-2xl mx-auto"> {/* Breite weiter eingeschränkt auf max-w-xl */}
+            <div className="max-w-4xl mx-auto "> 
                 <div className="overflow-hidden">
                     <div className="flex animate-marquee ">
                         {/* Erste Reihe von Logos */}

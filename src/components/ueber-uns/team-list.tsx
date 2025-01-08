@@ -8,17 +8,17 @@ const TeamList = () => {
           linkedin: 'https://www.linkedin.com/in/mazlumkaya/',
       },
       {
-          name: 'Jane Doe',
-          role: 'Co-Founder',
+          name: 'Team',
+          role: '10 Personen',
           imageUrl:
-              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+              'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           linkedin: 'https://www.linkedin.com/in/janedoe',
       },
       {
-          name: 'John Smith',
-          role: 'Manager',
+          name: 'Partner',
+          role: '+50 Unternehmen',
           imageUrl:
-              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+              'https://images.unsplash.com/photo-1580741990231-4aa1c1d9a76a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           linkedin: 'https://www.linkedin.com/in/johnsmith',
       },
   ];
@@ -29,7 +29,7 @@ const TeamList = () => {
               {/* Header */}
               <div className="text-center mb-16">
                   <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
-                      Das ist unser Team
+                      Unser Team zum Erfolg!
                   </h2>
                   <p className="mt-6 text-lg text-secondary">
                       Gemeinsam schaffen wir innovative Lösungen und setzen auf partnerschaftliche Zusammenarbeit.
