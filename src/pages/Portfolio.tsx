@@ -1,5 +1,6 @@
 import PageContainer from '../components/layout/PageContainer';
 import PortfolioCompanyList from '../components/portfolio/PortfolioCompanyList.tsx';
+import PortfolioGallery from '../components/portfolio/PortfolioGallery.tsx';
 import PagePortfolio from '../components/portfolio/PortfolioList.tsx';
 
 const Portfolio = () => {
@@ -7,6 +8,7 @@ const Portfolio = () => {
     <PageContainer>
       <PagePortfolio/>
       <PortfolioCompanyList/>
+      <PortfolioGallery/>
     </PageContainer>
   );
 };

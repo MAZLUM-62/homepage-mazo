@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable'; // Für Touch-Gesten
 
 import image1 from '../images/01.png';
@@ -95,13 +95,16 @@ const CarouselMachenWir = () => {
         <section className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Große Überschrift */}
+
+
                 <div className="text-center mb-12 intersect-once intersect:motion-preset-slide-up">
                     <h2 className="text-7xl font-bold motion-translate-y-in-100 motion-duration-[2s] motion-ease-spring-smooth">
-                        <span className="">Wie wir das</span>
+                        <span className="bg-brand-primary text-bg-primary px-2 py-1 rounded-md font-mono">
+                           WIE WIR DAS
+                        </span>
                         <span className="text-white"> machen?</span>
                     </h2>
                 </div>
-
                 {/* Slider */}
                 <div
                     className="relative flex items-center overflow-hidden intersect-once intersect:motion-preset-slide-up"
@@ -125,7 +128,7 @@ const CarouselMachenWir = () => {
                                 className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
                             >
                                 {/* Links: Bild */}
-                                <div className="relative w-full h-[350px] overflow-hidden select-none">
+                                <div className="relative w-full h-[350px] overflow-hidden select-none px-10">
                                     <img
                                         src={item.image}
                                         alt={`Slide ${index + 1}`}
@@ -153,11 +156,10 @@ const CarouselMachenWir = () => {
                         <button
                             key={index}
                             onClick={() => goToImage(index)}
-                            className={`w-5 h-5 rounded-md border-2 ${
-                                index === currentIndex
-                                    ? 'bg-brand-primary'
-                                    : 'bg-transparent'
-                            } border-brand-primary hover:bg-brand-primary transition duration-300`}
+                            className={`w-5 h-5 rounded-md border-2 ${index === currentIndex
+                                ? 'bg-brand-primary'
+                                : 'bg-transparent'
+                                } border-brand-primary hover:bg-brand-primary transition duration-300`}
                         />
                     ))}
                 </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Send } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const routes = [
@@ -21,8 +21,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-text-primary  motion-preset-blur-right ">
-              MazoCode
+            <span className="text-2xl font-bold text-text-primary motion-preset-blur-right font-mono ">
+              MAZO.Code
             </span>
           </Link>
 
@@ -39,8 +39,10 @@ const Navigation = () => {
                 {route.label}
               </Link>
             ))}
-            <Link to="/kontakt" className="btn btn-primary ">
+            <Link to="/kontakt" className="btn btn-primary text-bg-primary">
               Anfrage
+              <Send className="text-bg-primary ml-2 h-5 w-5 group-hover:translate-x-6 transition-transform motion-duration-2000" />
+
             </Link>
           </div>
 
@@ -56,7 +58,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-bg-secondary border-b border-border-subtle">
+        <div className="md:hidden bg-bg-secondary border-b border-border-subtle motion-preset-focus">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {routes.map((route) => (
               <Link

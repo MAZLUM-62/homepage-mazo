@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Navigation />
         <main className="flex-grow">
           <ObserverProvider>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/leistungen" element={<Services />} />

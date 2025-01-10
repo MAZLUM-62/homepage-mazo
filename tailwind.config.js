@@ -62,6 +62,28 @@ export default {
   },
   plugins: [
     require('tailwindcss-motion'),
-    require('tailwindcss-intersect') 
+    require('tailwindcss-intersect'),
+    function ({ addUtilities }) {
+      addUtilities({
+        '.stroke-1': {
+          '-webkit-text-stroke': '1px',
+        },
+        '.stroke-2': {
+          '-webkit-text-stroke': '2px',
+        },
+        '.stroke-3': {
+          '-webkit-text-stroke': '3px',
+        },
+        '.stroke-white': {
+          '-webkit-text-stroke-color': '#ffffff',
+        },
+        '.stroke-black': {
+          '-webkit-text-stroke-color': '#000000',
+        },
+        '.stroke-primary': {
+          '-webkit-text-stroke-color': '#00A3FF',
+        },
+      });
+    },
   ],
 };

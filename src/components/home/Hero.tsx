@@ -36,10 +36,10 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link
               to="/kontakt"
-              className="btn btn-primary group"
+              className="btn btn-primary group text-bg-primary"
             >
               Projekt Anfrage
-              <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform motion-preset-pulse motion-duration-2000" />
+              <Rocket className="text-bg-primary ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform motion-preset-pulse motion-duration-2000" />
             </Link>
             <Link
               to="/portfolio"

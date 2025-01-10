@@ -70,10 +70,13 @@ const FeaturedServices = () => {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 motion-preset-expand">
-          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-            Unsere digitalen Lösungen für Ihren Erfolg
+          <h2 className="text-7xl font-bold  ">
+            <span className="stroke-2 stroke-primary text-transparent">Unsere digitalen Lösungen</span>
+            <br />
+            <span className="text-text-white"> für Ihren Erfolg</span>
           </h2>
-          <p className="mt-4 text-lg text-brand-primary">
+          
+          <p className="mt-4 text-lg text-brand-primary font-semibold">
             Alles, was Sie für Ihre digitale Transformation brauchen – an einem
             Ort.
           </p>
