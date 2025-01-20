@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "category": "Online-Shops",
+    "desc": "Wir begleiteten das gesamte Projekt Candy-Dealer, von der Designentwicklung bis zum fertigen Online-Shop mit einem Konfigurator-System für individuelle Süßigkeiten-Tüten.",
+    "title": "Candy-Dealer.EU",
+    "image": "../images/Projekte/CandyDealer/candydealerpage.jpg",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 2,
+    "category": "Webentwicklung",
+    "desc": "Das Projekt wurde gemeinsam mit dem Kunden entwickelt. Von der Logo-Gestaltung bis zur finalen Website war uns ein schlichtes und effektives Design wichtig, ganz nach den Wünschen des Kunden.",
+    "title": "Aro-Gerüstbau",
+    "image": "src/components/images/Projekte/AroGerüstbau/Aro-front.jpg",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 3,
+    "category": "Apps",
+    "desc": "UpToDating ist ein Universitätsprojekt von drei Studierenden. Die App, noch in der Testphase, wurde mit dem Flutter Framework entwickelt. Design und Konzeption entstanden in enger Zusammenarbeit mit dem Team.",
+    "title": "UpToDating",
+    "image": "src/components/src/components/images/Projekte/AppUpToDating/homescreen.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 4,
+    "category": "Webentwicklung",
+    "desc": "Eine simple, informative Website, die alle wichtigen Informationen auf einen Blick zeigt – entwickelt, um Menschen zu motivieren, wieder fit zu werden.",
+    "title": "Jen-FindYourBalance",
+    "image": "src/components/images/Projekte/JenFindYouBalance/jenfindyourbalance.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 5,
+    "category": "Webentwicklung",
+    "desc": "Ein umfassendes Projekt zur Überarbeitung des Internetauftritts unseres Kunden. Dazu gehörten die Integration digitaler Rechnungen und die Entwicklung einer Cloud-Lösung zur internen Datenverwaltung und Kommunikation.",
+    "title": "Gerüstbau-Kaya",
+    "image": "src/components/images/Projekte/GerüstbauKaya/mockupkaya.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 6,
+    "category": "Webentwicklung",
+    "desc": "Für UnderCover Bingen haben wir eine digitale Speisekarte entwickelt. Mit einem Moderator-Login kann der Betreiber Inhalte und Preise selbstständig aktualisieren. Das Projekt startete in React und wurde später in WordPress übertragen.",
+    "title": "UnderCover-Bingen",
+    "image": "src/components/images/Projekte/UndercoverShishaBingen/undercover-homepage.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 7,
+    "category": "Webentwicklung",
+    "desc": "In Zusammenarbeit mit dem CentralV-Team entstand eine Community-Website mit Datenbankanbindung, die Nutzern die Erstellung von Profilen ermöglichte. Zusätzlich entwickelten wir ein Logo, ein Ticketsystem und ein Dashboard als Webanwendung.",
+    "title": "CentralV",
+    "image": "src/components/images/Projekte/CentralV/homepage.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 8,
+    "category": "Designen",
+    "desc": "Entwicklung eines modernen und ansprechenden Logos für das Unternehmen Mazo.",
+    "title": "Mazo.",
+    "image": "src/components/images/Projekte/MazoOffiziell/logo_small_icon_only.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 9,
+    "category": "Designen",
+    "desc": "Gestaltung einer Speisekarte für eine Sportbar in Mainz sowie eine Shishabar in Mainz-Kastel.",
+    "title": "Meenzer Sportsbar",
+    "image": "src/components/images/Projekte/DesignSportsbar/sportsbarkarte.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 10,
+    "category": "Designen",
+    "desc": "Entwicklung eines Buchcovers in Kombination mit künstlicher Intelligenz – ein innovatives Projekt für unseren Kunden.",
+    "title": "Buch-Cover-Tom",
+    "image": "../images/Projekte/BuchTom/BuchTomMockup.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 11,
+    "category": "Designen",
+    "desc": "Ein modernes und ansprechendes Cover für ein Projektmanagement-Buch, entwickelt in enger Zusammenarbeit mit der Autorin.",
+    "title": "Projektmanagement-Cover",
+    "image": "src/components/images/Projekte/BuchProjektmanagementBasis/Mockup1.png",
+    "image2": "",
+    "image3": ""
+  },
+  {
+    "id": 12,
+    "category": "Designen",
+    "desc": "Minimalistisches und modernes Logo-Design für die Ates Reinigung, perfekt abgestimmt auf die Unternehmenswerte.",
+    "title": "Ates-Reinigung-Logo",
+    "image": "src/components/images/Projekte/AtesReinigung/logo.png",
+    "image2": "",
+    "image3": ""
+  }
+]

@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 // Importiere deine Bilder
-import imageCandyDealer from "../images/Projekte/CandyDealer/Candy-frontJPG.jpg";
-import imageCandyDealer1 from "../images/Projekte/CandyDealer/candy-front2JPG.jpg";
-import imageCandyDealer2 from "../images/Projekte/CandyDealer/Candy-mixer.jpg";
+import imageCandyDealer from "../images/Projekte/CandyDealer/candydealerpage.jpg";
 import imageAroGeruest from "../images/Projekte/AroGerüstbau/Aro-front.jpg";
 import imageUpToDating from "../images/Projekte/AppUpToDating/homescreen.png";
 import imageFindYourBalance from "../images/Projekte/JenFindYouBalance/jenfindyourbalance.png";
@@ -12,20 +10,13 @@ import imageUnderCoverShishaBingen from "../images/Projekte/UndercoverShishaBing
 import ImagesCentralV from "../images/Projekte/CentralV/homepage.png";
 import imageMazoDesign from "../images/Projekte/MazoOffiziell/logo_small_icon_only.png";
 import imagesMeenzerSportsbar from "../images/Projekte/DesignSportsbar/sportsbarkarte.png";
-import imagesTomBuchCover from "../images/Projekte/BuchTom/3D Mockup.png";
+import imagesTomBuchCover from "../images/Projekte/BuchTom/BuchTomMockup.png";
 import imagesProjektmanagementCover from "../images/Projekte/BuchProjektmanagementBasis/Mockup1.png";
 import imagesAtesReinigung from "../images/Projekte/AtesReinigung/logo.png";
+import { useNavigate } from "react-router-dom";
 
 // Definiere ein Interface für ein Projekt
-interface Project {
-  id: number;
-  category: string;
-  title: string;
-  desc: string;
-  image: string;
-  image2: string;
-  image3: string;
-}
+
 
 // Projekte
 const projects = [
@@ -35,14 +26,12 @@ const projects = [
     desc: "Wir begleiteten das gesamte Projekt Candy-Dealer, von der Designentwicklung bis zum fertigen Online-Shop mit einem Konfigurator-System für individuelle Süßigkeiten-Tüten.",
     title: "Candy-Dealer.EU",
     image: imageCandyDealer,
-    image2: imageCandyDealer1,
-    image3: imageCandyDealer2,
   },
   {
     id: 2,
     category: "Webentwicklung",
     desc: "Das Projekt wurde gemeinsam mit dem Kunden entwickelt. Von der Logo-Gestaltung bis zur finalen Website war uns ein schlichtes und effektives Design wichtig, ganz nach den Wünschen des Kunden.",
-    title: "Aro Gerüstbau",
+    title: "Aro-Gerüstbau",
     image: imageAroGeruest,
     image2: "",
     image3: "",
@@ -60,7 +49,7 @@ const projects = [
     id: 4,
     category: "Webentwicklung",
     desc: "Eine simple, informative Website, die alle wichtigen Informationen auf einen Blick zeigt – entwickelt, um Menschen zu motivieren, wieder fit zu werden.",
-    title: "Jen Find Your Balance",
+    title: "Jen-FindYourBalance",
     image: imageFindYourBalance,
     image2: "",
     image3: "",
@@ -69,7 +58,7 @@ const projects = [
     id: 5,
     category: "Webentwicklung",
     desc: "Ein umfassendes Projekt zur Überarbeitung des Internetauftritts unseres Kunden. Dazu gehörten die Integration digitaler Rechnungen und die Entwicklung einer Cloud-Lösung zur internen Datenverwaltung und Kommunikation.",
-    title: "Gerüstbau Kaya",
+    title: "Gerüstbau-Kaya",
     image: imageKayaGeruestbau,
     image2: "",
     image3: "",
@@ -78,9 +67,9 @@ const projects = [
     id: 6,
     category: "Webentwicklung",
     desc: "Für UnderCover Bingen haben wir eine digitale Speisekarte entwickelt. Mit einem Moderator-Login kann der Betreiber Inhalte und Preise selbstständig aktualisieren. Das Projekt startete in React und wurde später in WordPress übertragen.",
-    title: "UnderCover Bingen - Digitale Speisekarte",
+    title: "UnderCover-Bingen",
     image: imageUnderCoverShishaBingen,
-    image2: "",
+    image2: "", 
     image3: "",
   },
   {
@@ -114,7 +103,7 @@ const projects = [
     id: 10,
     category: "Designen",
     desc: "Entwicklung eines Buchcovers in Kombination mit künstlicher Intelligenz – ein innovatives Projekt für unseren Kunden.",
-    title: "Buch Cover Tom",
+    title: "Buch-Cover-Tom",
     image: imagesTomBuchCover,
     image2: "",
     image3: "",
@@ -123,7 +112,7 @@ const projects = [
     id: 11,
     category: "Designen",
     desc: "Ein modernes und ansprechendes Cover für ein Projektmanagement-Buch, entwickelt in enger Zusammenarbeit mit der Autorin.",
-    title: "Projektmanagement Cover",
+    title: "Projektmanagement-Cover",
     image: imagesProjektmanagementCover,
     image2: "",
     image3: "",
@@ -132,7 +121,7 @@ const projects = [
     id: 12,
     category: "Designen",
     desc: "Minimalistisches und modernes Logo-Design für die Ates Reinigung, perfekt abgestimmt auf die Unternehmenswerte.",
-    title: "Ates Reinigung Logo",
+    title: "Ates-Reinigung-Logo",
     image: imagesAtesReinigung,
     image2: "",
     image3: "",
@@ -143,10 +132,10 @@ const categories = ["Alle", "Webentwicklung", "Online-Shops", "Apps", "Designen"
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("Alle");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null); // Typ definiert
-  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const navigate = useNavigate(); // useNavigate Hook initialisieren
 
-  const handleClose = () => setSelectedProject(null);
+
+
 
   const filteredProjects =
     selectedCategory === "Alle"
@@ -161,8 +150,8 @@ const Gallery = () => {
           <button
             key={category}
             className={`px-4 py-2 rounded-full font-semibold ${selectedCategory === category
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              ? "bg-brand-primary text-black"
+              : "bg-gray-200 hover:bg-brand-primary text-black focus:outline-none transition duration-300 ease-in-out transform hover:scale-105"
               }`}
             onClick={() => setSelectedCategory(category)}
           >
@@ -177,8 +166,8 @@ const Gallery = () => {
           <div
             key={project.id}
             className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-            onClick={() => setSelectedProject(project)} // Typ passt jetzt
-          >
+            onClick={() => navigate(`/portfolio/kunde/${project.title}`)} // Navigiere zu /portfolio/kunde/xyz
+            >
             <img
               src={project.image}
               alt={project.title}
@@ -190,65 +179,6 @@ const Gallery = () => {
           </div>
         ))}
       </div>
-
-      {/* Dialogfenster */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-bg-secondary rounded-lg p-6 w-full max-w-4xl relative flex flex-col lg:flex-row">
-            {/* Close Button */}
-            <button
-              onClick={handleClose}
-              className="absolute top-2 right-2 bg-white color-black text-white p-2 rounded-full hover:bg-bg-secondary transition-colors"
-            >
-              ✖
-            </button>
-
-            {/* Dialog-Inhalt */}
-            <div className="lg:w-2/3 lg:pr-4">
-              <h1 className="text-2xl font-bold">{selectedProject.title}</h1>
-              <p className="mt-2 text-gray-600">
-                Kategorie: {selectedProject.category}
-              </p>
-              <p className="mt-4">{selectedProject.desc}</p>
-            </div>
-
-            {/* Bilder-Galerie */}
-            <div className="lg:w-1/3 flex flex-col items-center space-y-4">
-              {[selectedProject.image, selectedProject.image2, selectedProject.image3]
-                .filter((img) => img) // Filtert leere Bilder (falls image2 oder image3 leer ist)
-                .map((img, index) => (
-                  <div key={index} className="w-full">
-                    <img
-                      src={img}
-                      alt={selectedProject.title}
-                      className="w-full h-32 object-cover rounded-lg cursor-pointer"
-                      onClick={() =>
-                        setFullscreenImage(img)
-                      } // Vollbildanzeige auslösen
-                    />
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Vollbild-Bildanzeige */}
-      {fullscreenImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <img
-            src={fullscreenImage}
-            alt="Fullscreen View"
-            className="max-w-full max-h-full"
-          />
-          <button
-            onClick={() => setFullscreenImage(null)}
-            className="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-300"
-          >
-            ✖
-          </button>
-        </div>
-      )}
     </div>
   );
 };

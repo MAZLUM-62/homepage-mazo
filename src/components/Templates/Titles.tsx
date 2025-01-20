@@ -1,5 +1,4 @@
 
-
 const Titles = () => {
     return (
         // Title 1

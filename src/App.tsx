@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Kunden from './pages/Kunden';
 import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/leistungen" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/kunde/:title" element={<Kunden />} />
+
             <Route path="/ueber-uns" element={<About />} />
             <Route path="/kontakt" element={<Contact />} />
           </Routes>
